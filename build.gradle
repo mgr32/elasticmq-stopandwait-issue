@@ -1,0 +1,26 @@
+plugins {
+	id 'java'
+	id 'application'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'org.elasticmq', name: 'elasticmq-rest-sqs_2.13', version: '0.15.8'  // working ok
+//	implementation group: 'org.elasticmq', name: 'elasticmq-rest-sqs_2.13', version: '1.0.0'  // first version with the issue
+//	implementation group: 'org.elasticmq', name: 'elasticmq-rest-sqs_2.13', version: '1.4.2'  // current version still has the issue
+}
+
+application {
+	mainClass = 'com.example.demo.DemoApplication'
+}
+
